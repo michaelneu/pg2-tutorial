@@ -5,7 +5,7 @@ package com.mathlabs.graphs;
  * 
  * @author michaelneu
  */
-public class Point {
+public final class Point {
 	private double x, y;
 	
 	/**

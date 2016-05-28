@@ -5,7 +5,7 @@ package com.mathlabs;
  * 
  * @author michaelneu
  */
-public class Fraction {
+public final class Fraction {
 	private int numerator, denominator;
 	
 	/**

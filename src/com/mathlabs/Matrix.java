@@ -5,7 +5,7 @@ package com.mathlabs;
  * 
  * @author michaelneu
  */
-public class Matrix {
+public final class Matrix {
 	double[][] values;
 	private int m, n;
 	

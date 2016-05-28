@@ -5,7 +5,7 @@ package com.mathlabs;
  * 
  * @author michaelneu
  */
-public class MathLabs {
+public final class MathLabs {
 	/**
 	 * Returns the absolute value of a double number. 
 	 * 
