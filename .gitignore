@@ -49,3 +49,8 @@ local.properties
 
 # Code Recommenders
 .recommenders/
+
+# Intellij Idea
+.idea/
+out/
+*.iml

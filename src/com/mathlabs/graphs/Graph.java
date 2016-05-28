@@ -15,7 +15,7 @@ public class Graph {
 	 * @return
 	 */
 	public double getY(double x) {
-		return x;
+		return x * x;
 	}
 	
 	/**
