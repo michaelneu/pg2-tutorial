@@ -12,7 +12,7 @@ public class GraphIterator implements Iterator<Derivable> {
 
     /**
      * Create a new GraphIterator with a given Derivable.
-     * 
+     *
      * @param derivable
      */
     public GraphIterator(Derivable derivable) {
