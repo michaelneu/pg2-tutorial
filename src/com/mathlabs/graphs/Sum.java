@@ -33,14 +33,14 @@ public class Sum extends Graph {
     }
 
     @Override
-    public Graph derivate() {
+    public Derivable derivate() {
         Graph[] derivates = new Graph[this.elements.length];
 
         for (int i = 0; i < derivates.length; i++) {
             Graph g = this.elements[i];
 
             if (g != null) {
-                derivates[i] = this.elements[i].derivate();
+                derivates[i] = (Graph)this.elements[i].derivate();
             }
         }
 

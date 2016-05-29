@@ -23,8 +23,13 @@ public class Constant extends Graph {
     }
 
     @Override
-    public Graph derivate() {
+    public Derivable derivate() {
         return new Constant(0);
+    }
+
+    @Override
+    public boolean canBeDerived() {
+        return false;
     }
 
     @Override

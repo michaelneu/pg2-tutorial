@@ -29,7 +29,7 @@ public class Product extends Sum {
     }
 
     @Override
-    public Graph derivate() {
+    public Derivable derivate() {
         Graph[] derivates = new Graph[this.elements.length];
 
         for (int i = 0; i < derivates.length; i++) {
@@ -37,7 +37,7 @@ public class Product extends Sum {
 
             if (f_i != null) {
                 Graph[] products = new Graph[derivates.length];
-                products[0] = f_i.derivate();
+                products[0] = (Graph)f_i.derivate();
 
                 int productIndex = 1;
 

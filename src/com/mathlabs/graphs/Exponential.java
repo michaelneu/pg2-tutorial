@@ -38,8 +38,9 @@ public class Exponential extends Graph {
         }
     }
 
-    public Graph derivate() {
-        return new Product(this, new Constant(Math.log(this.base) / Math.log(Math.E)), this.exponent.derivate());
+    @Override
+    public Derivable derivate() {
+        return new Product(this, new Constant(Math.log(this.base) / Math.log(Math.E)), (Graph)this.exponent.derivate());
     }
 
     @Override

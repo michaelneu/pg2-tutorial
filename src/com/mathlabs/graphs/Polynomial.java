@@ -33,7 +33,7 @@ public class Polynomial extends Graph {
     }
 
     @Override
-    public Graph derivate() {
+    public Derivable derivate() {
         int length = this.coefficients.length;
 
         if (length == 1) {
