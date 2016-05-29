@@ -1,12 +1,18 @@
 package com.mathlabs.graphs;
 
 /**
+ * The Constant class represents a constant value in the cartesian coordinate system.
  *
  * @author michaelneu
  */
 public class Constant extends Graph {
     private final double value;
 
+    /**
+     * Create a new constant.
+     *
+     * @param value
+     */
     public Constant(double value) {
         this.value = value;
     }
@@ -14,6 +20,11 @@ public class Constant extends Graph {
     @Override
     public double getY(double x) {
         return this.value;
+    }
+
+    @Override
+    public Graph derivate() {
+        return new Constant(0);
     }
 
     @Override

@@ -7,16 +7,21 @@ import com.mathlabs.MathLabs;
  * 
  * @author michaelneu
  */
-public class Graph {
+public abstract class Graph {
 	/**
 	 * Gets the y-value of any given point on the abscissa. 
 	 * 
 	 * @param x
 	 * @return
 	 */
-	public double getY(double x) {
-		return x * x;
-	}
+	public abstract double getY(double x);
+
+	/**
+	 * Creates the derivative of the graph.
+	 *
+	 * @return
+     */
+	public abstract Graph derivate();
 	
 	/**
 	 * Gets all points on the graph in [start:end] with a distance of stepSize between each point. 

@@ -1,12 +1,18 @@
 package com.mathlabs.graphs;
 
 /**
+ * The Sum class represents a collection of added Graph objects.
  *
  * @author michaelneu
  */
 public class Sum extends Graph {
-    private final Graph[] elements;
+    protected final Graph[] elements;
 
+    /**
+     * Create a new sum with given elements.
+     *
+     * @param elements
+     */
     public Sum(Graph... elements) {
         this.elements = new Graph[elements.length];
 
@@ -24,6 +30,21 @@ public class Sum extends Graph {
         }
 
         return result;
+    }
+
+    @Override
+    public Graph derivate() {
+        Graph[] derivates = new Graph[this.elements.length];
+
+        for (int i = 0; i < derivates.length; i++) {
+            Graph g = this.elements[i];
+
+            if (g != null) {
+                derivates[i] = this.elements[i].derivate();
+            }
+        }
+
+        return new Sum(derivates);
     }
 
     @Override
