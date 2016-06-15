@@ -16,7 +16,15 @@ public class Sum extends Graph {
     public Sum(Graph... elements) {
         this.elements = new Graph[elements.length];
 
-        System.arraycopy(elements, 0, this.elements, 0, elements.length);
+        for (int i = 0; i < this.elements.length; i++) {
+            Graph g = elements[i];
+
+            if (g == null) {
+                throw new InvalidGraphError();
+            } else {
+                this.elements[i] = g;
+            }
+        }
     }
 
     @Override

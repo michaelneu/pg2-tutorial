@@ -1,5 +1,7 @@
 package com.mathlabs.trees;
 
+import com.mathlabs.IllegalDataInsertedError;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -24,7 +26,11 @@ public class BinarySearchTree<T extends Comparable<T>> {
      * @param data
      */
     public void insert(T data) {
-        this.root = root.insert(data);
+        if (data == null) {
+            throw new IllegalDataInsertedError();
+        } else {
+            this.root = root.insert(data);
+        }
     }
 
     /**

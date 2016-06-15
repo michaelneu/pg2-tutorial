@@ -16,10 +16,14 @@ public final class Matrix {
 	 * @param n Columns
 	 */
 	public Matrix(int m, int n) {
-		this.m = m;
-		this.n = n;
-		
-		this.values = new double[m][n];
+		if (m < 1 || n < 1) {
+			throw new MatrixIllegalSizeError();
+		} else {
+			this.m = m;
+			this.n = n;
+
+			this.values = new double[m][n];
+		}
 	}
 	
 	/**
@@ -86,7 +90,9 @@ public final class Matrix {
 	 * @return A new matrix containing the sum of both matrices. 
 	 */
 	public Matrix add(Matrix matrix) {
-		if (this.m == matrix.getM() && this.n == matrix.getN()) {
+		if (this.m != matrix.getM() || this.n != matrix.getN()) {
+			throw new MatrixDimensionMismatchError(this, matrix);
+		} else {
 			Matrix result = new Matrix(this.m, this.n);
 			
 			for (int i = 0; i < this.m; i++) {
@@ -96,8 +102,6 @@ public final class Matrix {
 			}
 			
 			return result;
-		} else {
-			return null;
 		}
 	}
 	
@@ -138,7 +142,7 @@ public final class Matrix {
 	 */
 	public Matrix multiply(Matrix matrix) {
 		if (this.n != matrix.getM()) {
-			return null;
+			throw new MatrixDimensionMismatchError(this, matrix);
 		} else {
 			Matrix result = new Matrix(this.m, matrix.getN());
 			

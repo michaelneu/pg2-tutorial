@@ -1,5 +1,7 @@
 package com.mathlabs.lists;
 
+import com.mathlabs.IllegalDataInsertedError;
+
 /**
  * The LinkedList class provides a single linked list.
  *
@@ -31,7 +33,11 @@ public class LinkedList<T> {
      * @param index
      */
     public void insert(T data, int index) {
-        this.root = this.root.insert(data, index);
+        if (data == null) {
+            throw new IllegalDataInsertedError();
+        } else {
+            this.root = this.root.insert(data, index);
+        }
     }
 
     /**

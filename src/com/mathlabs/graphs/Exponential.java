@@ -16,8 +16,12 @@ public class Exponential extends Graph {
      * @param exponent
      */
     public Exponential(double base, Graph exponent) {
-        this.base = base;
-        this.exponent = exponent;
+        if (exponent == null) {
+            throw new InvalidGraphError();
+        } else {
+            this.base = base;
+            this.exponent = exponent;
+        }
     }
 
     /**
@@ -25,8 +29,7 @@ public class Exponential extends Graph {
      * @param base
      */
     public Exponential(double base) {
-        this.base = base;
-        this.exponent = new Polynomial(1, 0);
+        this(base, new Polynomial(1, 0));
     }
 
     @Override

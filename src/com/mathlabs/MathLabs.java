@@ -30,7 +30,7 @@ public final class MathLabs {
 		final double precision = 0.00000000001;
 		
 		if (number <= 0) {
-			return 0;
+			throw new NegativeRadicandError(number);
 		} else {
 			double x_n = number;
 			
@@ -95,4 +95,20 @@ public final class MathLabs {
 			return gcd(b, a % b);
 		}
 	}
+
+    /**
+     * Returns the arithmetic middle of all given values.
+     *
+     * @param values
+     * @return
+     */
+    public static double arithmeticMiddle(double... values) {
+        double sum = 0;
+
+        for (double value : values) {
+            sum += value;
+        }
+
+        return sum / values.length;
+    }
 }

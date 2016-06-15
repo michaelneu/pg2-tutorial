@@ -16,7 +16,11 @@ public class GraphIterator implements Iterator<Derivable> {
      * @param derivable
      */
     public GraphIterator(Derivable derivable) {
-        this.derivable = derivable;
+        if (derivable == null) {
+            throw new InvalidGraphError();
+        } else {
+            this.derivable = derivable;
+        }
     }
 
     @Override
