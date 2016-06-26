@@ -26,7 +26,9 @@ public class Polynomial extends Graph {
         double result = 0;
 
         for (int i = 0; i < this.coefficients.length; i++) {
-            result += MathLabs.pow(x, this.coefficients.length - i - 1);
+            double coefficient = this.coefficients[i];
+
+            result += coefficient * MathLabs.pow(x, this.coefficients.length - i - 1);
         }
 
         return result;
