@@ -1,6 +1,7 @@
 package com.mathlabs.lists;
 
 import com.mathlabs.IllegalDataInsertedError;
+import com.mathlabs.link.Parallel;
 
 /**
  * The LinkedList class provides a single linked list.
@@ -92,5 +93,12 @@ public class LinkedList<T> {
      */
     public int size() {
         return this.root.size();
+    }
+
+    /**
+     * Gets a parallel stream to modify the list.
+     */
+    public Parallel<T> parallel() {
+        return new Parallel<>(this);
     }
 }
